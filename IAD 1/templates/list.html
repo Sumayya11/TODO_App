@@ -1,0 +1,117 @@
+<!--<body style="background-color: rgb(3, 35, 43)">
+    <div class="label">
+            <h1> TODO App...</h1>
+
+            
+            
+            <form action="/task" method="post">
+                <p><input type="text" name="content"></p>
+                <input type="submit" value="Add task">
+            </form>
+            
+            
+            
+            
+            <ol>
+                {% for task in tasks %}
+                    <li>
+                        {% if task.done %} <strike> {% endif %}{{ task.content }} {% if task.done %} </strike>{% endif %}
+                        <a href="/done/{{ task.id }}">Done</a>
+                        <a href="/delete/{{ task.id }}">Delete</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+</body> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO App</title>
+    <style>
+        body {
+            background-color: rgb(3, 35, 43);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .label {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        ol {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        strike {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="label">
+        <h1>TODO App...</h1>
+
+        <form action="/task" method="post">
+            <p><input type="text" name="content"></p>
+            <input type="submit" value="Add task">
+        </form>
+
+        <ol>
+            {% for task in tasks %}
+                <li>
+                    {% if task.done %}<strike>{% endif %}
+                    {{ task.content }}
+                    {% if task.done %}</strike>{% endif %}
+                    <a href="/done/{{ task.id }}">Done</a>
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
