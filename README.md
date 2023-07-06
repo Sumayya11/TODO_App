@@ -13,7 +13,7 @@ This layer contains the business logic and application-specific rules. It is res
 This layer deals with data storage and retrieval. In this application, SQLite is used as the database system. The data layer interacts with the database through the use of an ORM (Object-Relational Mapping) library, such as SQLAlchemy.
 
 ## Prerequisites
-   - Python 3.x installed
+   - Python 3.9 installed
    - Flask framework
    - SQLAlchemy library
 
